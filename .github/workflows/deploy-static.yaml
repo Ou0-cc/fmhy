@@ -1,0 +1,33 @@
+on: 
+  push:
+  workflow_dispatch:
+
+name: Deploy website on push
+
+jobs:
+  web-deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get latest code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 1
+    - uses: pnpm/action-setup@v2
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+        cache: pnpm
+    - name: Install dependencies
+      run: pnpm install
+    - name: Build Project
+      run: |
+        pnpm docs:build
+    - name: Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+      with:
+        server: ${{ secrets.ftp_host }}
+        username: ${{ secrets.ftp_username }}
+        password: ${{ secrets.ftp_password }}
+        local-dir: docs/.vitepress/dist
