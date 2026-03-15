@@ -21,7 +21,7 @@ import type { DefaultTheme } from 'vitepress'
 export const meta = {
     name: 'freemediaheckyeah',
     description: 'The largest collection of free stuff on the internet!',
-    hostname: 'https://fmhy.net',
+    hostname: 'https://fmhy.ou0.cc',
     keywords: ['stream', 'movies', 'gaming', 'reading', 'anime'],
     build: {
         api: true,

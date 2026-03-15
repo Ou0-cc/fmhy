@@ -53,22 +53,22 @@ export default defineConfig({
     ['link', { rel: 'apple-touch-icon', href: '/pwa_icon.png', sizes: '192x192' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'default' }],
-    // Bing site verification
-    [
-      'meta',
-      {
-        name: 'msvalidate.01',
-        content: 'F3028112EF6F929B562F4B18E58E3691'
-      }
-    ],
-    // Google site verification
-    [
-      'meta',
-      {
-        name: 'google-site-verification',
-        content: 'XCq-ZTw6VJPQ7gVNEOl8u0JRqfadK7WcsJ0H598Wv9E'
-      }
-    ],
+    // // Bing site verification
+    // [
+    //   'meta',
+    //   {
+    //     name: 'msvalidate.01',
+    //     content: 'F3028112EF6F929B562F4B18E58E3691'
+    //   }
+    // ],
+    // // Google site verification
+    // [
+    //   'meta',
+    //   {
+    //     name: 'google-site-verification',
+    //     content: 'XCq-ZTw6VJPQ7gVNEOl8u0JRqfadK7WcsJ0H598Wv9E'
+    //   }
+    // ],
     // Redirect to main site if embedded in iframe
     [
       'script',
@@ -233,7 +233,8 @@ export default defineConfig({
       message: `${feedback} (rev: ${commitRef})`,
       copyright:
         `© ${new Date().getFullYear()}, <a href="https://i.ibb.co/VJQmQ9t/image.png">Estd 2018.</a>` +
-        `<br/> This site does not host any files.`
+        `<br/> This site does not host any files.
+        <br/> Mirror of official <a href="https://fmhy.net">FMHY</a>`
     },
     editLink: {
       pattern: 'https://github.com/fmhy/edit/edit/main/docs/:path',
