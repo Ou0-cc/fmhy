@@ -13,6 +13,7 @@ jobs:
     steps:
       - uses: tgymnich/fork-sync@v2.0
         with:
+          token: ${{ secrets.PERSONAL_TOKEN }}
           base: main
           head: main
           pr_message: 'Sync latest changes from fmhy/edit'
